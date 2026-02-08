@@ -25,12 +25,6 @@ interface SystemInfo {
   uptime: number
 }
 
-interface CPUInfo {
-  model: string
-  cores: number
-  usage: number
-}
-
 interface MemoryInfo {
   total: number
   used: number
@@ -393,7 +387,7 @@ function createWindow() {
     height: 638,
     resizable: false,
     title: 'IxiPC',
-    icon: path.join(process.env.VITE_PUBLIC || 'logo.svg'),
+    icon: path.join(process.env.VITE_PUBLIC, 'logo.png'),
     titleBarStyle: 'hidden',
     frame: false,
     webPreferences: {
