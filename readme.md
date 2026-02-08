@@ -12,7 +12,9 @@ Exibe, em tempo real, dados essenciais do computador como **CPU, memória, disco
 
 ![Captura do linux](.github/linux.png)
 
----
+### Windows
+
+## ![Captura do windows](.github/windows.png)
 
 ## ✨ Funcionalidades
 
