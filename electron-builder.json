@@ -10,12 +10,6 @@
     "dist",
     "dist-electron"
   ],
-  "extraResources": [
-    {
-      "from": "public",
-      "to": "public"
-    }
-  ],
   "win": {
     "target": [
       {
@@ -26,11 +20,10 @@
       }
     ],
     "icon": "public/icon.ico",
-    "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
+    "artifactName": "${productName}-Windows-${version}-${arch}-Setup.${ext}"
   },
   "nsis": {
     "oneClick": false,
-    "perMachine": false,
     "allowToChangeInstallationDirectory": true,
     "deleteAppDataOnUninstall": false
   },
@@ -40,6 +33,6 @@
     ],
     "icon": "public/icon.png",
     "category": "Utility",
-    "artifactName": "${productName}-Linux-${version}.${ext}"
+    "artifactName": "${productName}-Linux-${version}-${arch}.${ext}"
   }
 }
