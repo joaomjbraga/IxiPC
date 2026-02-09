@@ -289,6 +289,17 @@ async function getDiskInfo(): Promise<DiskInfo> {
   }
 }
 
+// Função auxiliar para obter o caminho correto do ícone
+function getIconPath(): string {
+  if (app.isPackaged) {
+    // Produção: o ícone está em process.resourcesPath como logo.ico
+    return path.join(process.resourcesPath, 'logo.ico')
+  } else {
+    // Desenvolvimento: o ícone está na pasta build como icon.ico
+    return path.join(process.env.APP_ROOT, 'build', 'icon.ico')
+  }
+}
+
 function setupIpcHandlers() {
   ipcMain.handle('get-system-info', async () => {
     try {
@@ -387,7 +398,7 @@ function createWindow() {
     height: 638,
     resizable: false,
     title: 'IxiPC',
-    icon: path.join(process.env.VITE_PUBLIC, 'logo.png'),
+    icon: getIconPath(), // Usando a função que resolve o caminho corretamente
     titleBarStyle: 'hidden',
     frame: false,
     webPreferences: {
@@ -426,8 +437,8 @@ app.on('activate', () => {
     createWindow()
   }
 })
-app.commandLine.appendSwitch('disable-gpu')
-app.commandLine.appendSwitch('disable-software-rasterizer')
+//app.commandLine.appendSwitch('disable-gpu')
+//app.commandLine.appendSwitch('disable-software-rasterizer')
 app.whenReady().then(() => {
   setupIpcHandlers()
   createWindow()

@@ -30,3 +30,5 @@ out/
 
 dist-electron
 package-lock.json
+
+*.exe

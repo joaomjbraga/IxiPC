@@ -4,11 +4,18 @@
   "productName": "IxiPC",
   "asar": true,
   "directories": {
-    "output": "release/${version}"
+    "output": "release/${version}",
+    "buildResources": "build"
   },
   "files": [
     "dist",
     "dist-electron"
+  ],
+  "extraResources": [
+    {
+      "from": "public/logo.ico",
+      "to": "logo.ico"
+    }
   ],
   "win": {
     "target": [
@@ -19,19 +26,21 @@
         ]
       }
     ],
-    "icon": "public/icon.ico",
+    "icon": "public/logo.ico",
     "artifactName": "${productName}-Windows-${version}-${arch}-Setup.${ext}"
   },
   "nsis": {
     "oneClick": false,
     "allowToChangeInstallationDirectory": true,
-    "deleteAppDataOnUninstall": false
+    "deleteAppDataOnUninstall": false,
+    "installerIcon": "public/logo.ico",
+    "uninstallerIcon": "public/logo.ico"
   },
   "linux": {
     "target": [
       "AppImage"
     ],
-    "icon": "public/icon.png",
+    "icon": "public/logo.png",
     "category": "Utility",
     "artifactName": "${productName}-Linux-${version}-${arch}.${ext}"
   }
