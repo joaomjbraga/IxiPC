@@ -1,4 +1,4 @@
-import { X, Cpu } from 'lucide-react'
+import { Cpu, X } from 'lucide-react'
 import styles from './Header.module.css'
 
 export function Header() {
@@ -11,9 +11,9 @@ export function Header() {
       <div className={styles.logo}>
         <Cpu size={18} />
         <span className={styles.title}>IxiPC</span>
-        <span className={styles.version}>v1.0</span>
+        <span className={styles.version}>v0.1.0</span>
       </div>
-      
+
       <button className={styles.closeButton} onClick={handleClose}>
         <X size={16} />
       </button>
